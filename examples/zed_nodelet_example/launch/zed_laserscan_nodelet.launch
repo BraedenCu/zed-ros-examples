@@ -78,6 +78,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
              <param name="output_frame_id" value="$(arg camera_name)_left_camera_frame"/>
              <param name="range_min" value="0.1"/>
              <remap from="image" to="$(arg zed_nodelet_name)/depth/depth_registered"/>
+             <!-- THIS ACTUALLY WORKS TO REMAP /zed/scan to /scan for nav stack -->
+             <remap from="scan" to="/scan"/>
+             <remap from="odom" to="zed/zed_nodelet/odom" />
         </node>
     </group>
 </launch>
